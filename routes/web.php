@@ -33,3 +33,34 @@ Route::get('/students', function () {
 
     return view('students', compact('students'));
 });
+
+
+// routes/web.php
+
+
+Route::get('/students', function () {
+    $students = fetchStudents();
+
+    return view('students', compact('students'));
+});
+
+Route::get('/students/search', function () {
+    $query = request('search');
+    $students = fetchStudents($query);
+
+    return view('students', compact('students'));
+})->name('students.search');
+
+function fetchStudents($query = null)
+{
+    $baseUrl = 'https://student.uzdsmi-nf.uz/rest/v1/data/student-list';
+    $url = $query ? "$baseUrl?page=2&search=$query" : "$baseUrl?page=2";
+
+    $response = Http::withHeaders([
+        'accept' => 'application/json',
+        'Authorization' => 'Bearer A1cKkkLr4dYYhHWhcZWsrMywHjHvSpz1',
+    ])->get($url);
+
+    return $response->json();
+}
+

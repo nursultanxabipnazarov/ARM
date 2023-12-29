@@ -1,3 +1,5 @@
+<!-- resources/views/students.blade.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,11 +27,21 @@
             max-width: 100px;
             max-height: 100px;
         }
+
+        .search-form {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
 
 <h1>Students List</h1>
+
+<form action="{{ route('students.search') }}" method="GET" class="search-form">
+    <label for="search">Search:</label>
+    <input type="text" name="search" id="search" value="{{ request('search') }}">
+    <button type="submit">Search</button>
+</form>
 
 <table id="studentsTable">
     <thead>
