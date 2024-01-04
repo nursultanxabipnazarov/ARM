@@ -27,12 +27,15 @@ Route::get('/students', function () {
     $response = Http::withHeaders([
         'accept' => 'application/json',
         'Authorization' => 'Bearer A1cKkkLr4dYYhHWhcZWsrMywHjHvSpz1',
-    ])->get('https://student.uzdsmi-nf.uz/rest/v1/data/student-list?page=3');
+    ])->get('https://student.uzdsmi-nf.uz/rest/v1/data/student-list');
 
     $students = $response->json();
 
     return view('students', compact('students'));
 });
+
+Route::get('/store-students',[StudentController::class,'storeStudents'])->name('storeStudents');
+
 
 
 // routes/web.php

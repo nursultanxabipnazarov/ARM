@@ -80,5 +80,11 @@
     </tbody>
 </table>
 
+<select name="" id="">
+    @foreach ($students['data']['items'] as $student)
+    <option value="">{{ $student['full_name'] }}</option>
+    @endforeach
+</select>
+
 </body>
 </html>
