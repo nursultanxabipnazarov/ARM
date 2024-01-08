@@ -41,6 +41,9 @@ Route::get('/students', function () {
 Route::get('/store-students',[StudentController::class,'storeStudents'])->name('storeStudents');
 
 Route::get('home',[AdminController::class,'home'])->name('home');
+Route::get('create-category',[AdminController::class,'createCategory'])->name('createCategory');
+Route::post('store-category',[AdminController::class,'storeCategory'])->name('storeCategory');
+Route::get('index-category',[AdminController::class,'indexCategory'])->name('indexCategory');
 
 // routes/web.php
 

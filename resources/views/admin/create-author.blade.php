@@ -26,13 +26,13 @@
                   <div class="card-header">
                     <h4>Add</h4>
                   </div>
-                  <form action="{{route('storeCategory')}}" method="post">
+                  <form action="" method="post">
                     @csrf
                   <div class="card-body">
 
                     <div class="form-group">
                       <label>Text</label>
-                      <input type="text" name="name" placeholder="Caregory name" class="form-control">
+                      <input type="text" name="name" placeholder="Author name" class="form-control">
                     </div>
                     <div class="form-group">
                         <label >Description</label>
