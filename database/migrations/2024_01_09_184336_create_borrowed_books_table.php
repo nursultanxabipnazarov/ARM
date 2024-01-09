@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('borrowed_books', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('book_id')->constrained(); 
-            $table->foreignId('student_id')->constrained(); 
-            $table->date('borrow_date');
+            $table->foreignId('book_id')->nullable()->constrained(); 
+            $table->foreignId('student_id')->nullable()->constrained(); 
+            $table->date('borrow_date')->nullable();
             $table->date('return_date')->nullable(); 
             $table->timestamps();
         });

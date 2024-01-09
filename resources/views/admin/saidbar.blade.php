@@ -35,10 +35,9 @@
         </li>
         <li class="menu-header">UI Elements</li>
         <li class="dropdown">
-          <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Basic
-              Components</span></a>
+          <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Borrow book</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="alert.html">Alert</a></li>
+            <li><a class="nav-link" href="{{route('createBorrow')}}">Borrow book</a></li>
             <li><a class="nav-link" href="badge.html">Badge</a></li>
             <li><a class="nav-link" href="breadcrumb.html">Breadcrumb</a></li>
             <li><a class="nav-link" href="buttons.html">Buttons</a></li>

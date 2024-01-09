@@ -27,8 +27,11 @@ class BookController extends Controller
       
     
         Book::create($request->all());
-        
+
 
         return redirect()->back()->with('message','Book created successfuly!');
     }
+
+
+    
 }

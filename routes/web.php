@@ -3,7 +3,9 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BorrowedBooksController;
 use App\Http\Controllers\StudentController;
+use App\Models\BorrowedBooks;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,4 +71,11 @@ Route::post('store-author',[AuthorController::class,'store'])->name('storeAuthor
 
 Route::get('create-book',[BookController::class,'create'])->name('createBook');
 Route::post('store-book',[BookController::class,'store'])->name('storeBook');   
+// routes/web.php
+Route::get('/book/search',[BookController::class,'search'])->name('book.search');
 
+
+
+//Borrow book route
+
+Route::get('create-borrow',[BorrowedBooksController::class,'create'])->name('createBorrow');
