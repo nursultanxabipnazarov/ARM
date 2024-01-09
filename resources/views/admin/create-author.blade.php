@@ -26,7 +26,7 @@
                   <div class="card-header">
                     <h4>Add</h4>
                   </div>
-                  <form action="" method="post">
+                  <form action="{{route('storeAuthor')}}" method="post">
                     @csrf
                   <div class="card-body">
 
@@ -35,8 +35,8 @@
                       <input type="text" name="name" placeholder="Author name" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label >Description</label>
-                        <textarea class="form-control"  name="desc" id="" cols="50" rows="2" placeholder="D"> </textarea>
+                        <label >Surname</label>
+                      <input type="text" name="surname" placeholder="Surname" class="form-control">
                     </div>
                   
               <div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">

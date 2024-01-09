@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,34 +47,7 @@ Route::get('create-category',[AdminController::class,'createCategory'])->name('c
 Route::post('store-category',[AdminController::class,'storeCategory'])->name('storeCategory');
 Route::get('index-category',[AdminController::class,'indexCategory'])->name('indexCategory');
 
-// routes/web.php
 
-
-// Route::get('/students', function () {
-//     $students = fetchStudents();
-
-//     return view('students', compact('students'));
-// });
-
-// Route::get('/students/search', function () {
-//     $query = request('search');
-//     $students = fetchStudents($query);
-
-//     return view('students', compact('students'));
-// })->name('students.search');
-
-// function fetchStudents($query = null)
-// {
-//     $baseUrl = 'https://student.uzdsmi-nf.uz/rest/v1/data/student-list';
-//     $url = $query ? "$baseUrl?page=2&search=$query" : "$baseUrl?page=2";
-
-//     $response = Http::withHeaders([
-//         'accept' => 'application/json',
-//         'Authorization' => 'Bearer A1cKkkLr4dYYhHWhcZWsrMywHjHvSpz1',
-//     ])->get($url);
-
-//     return $response->json();
-// }
 
 
 Route::middleware([
@@ -84,3 +59,14 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::get('create-author',[AuthorController::class,'create'])->name('createAuthor');
+Route::post('store-author',[AuthorController::class,'store'])->name('storeAuthor');
+
+
+// books route
+
+Route::get('create-book',[BookController::class,'create'])->name('createBook');
+Route::post('store-book',[BookController::class,'store'])->name('storeBook');   
+
